@@ -5,7 +5,7 @@ import time
 import keyboard
 from firebase import CloudData
 
-port = "COM8"
+port = "COM9"
 connected = False
 gateway = Communicate(port, 9600)
 time.sleep(1)
@@ -29,15 +29,15 @@ def conditionAlert(data):
         gateway.red()
         print("Red")
         return "red"
-    elif Rain > 25 or Moisture > 50:
+    elif Rain > 25 or Moisture > 100:
         gateway.orange()
         print("Orange")
         return "orange"
-    elif Rain > 10 or Moisture > 40:
+    elif Rain > 10 or Moisture > 70:
         gateway.yellow()
         print("Yellow")
         return "yellow"
-    elif Rain > 10 or Moisture > 10:
+    elif Rain > 10 or Moisture > 66:
         gateway.green()
         print("Green")
         return "green"
